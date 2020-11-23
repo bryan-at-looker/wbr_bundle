@@ -43,24 +43,35 @@ application: wbr_publish {
 }
 
 constant: title_case_viewname {
+  export: override_optional
   value: "{% assign viewname = _view._name | replace: template, '' | split: '_' %}{% for word in viewname %}{{ word | capitalize }} {% endfor %}"
 }
 
 constant: row_period_over_average {
+  export: override_optional
   value: "( 1.0000 * MAX(current.{{ row }}) / NULLIF(AVG(previous.{{ row }}),0) ) - 1 as {{ row }}"
 }
 
 constant: row_period_over_average_percent {
+  export: override_optional
   value: "(MAX(current.{{ row | replace: '::percent', '' }}) - AVG(previous.{{ row | replace: '::percent', '' }}) ) as {{ row | replace: '::percent', '' }}"
 }
 
 constant: row_period_over_last_year {
+  export: override_optional
   value: "( 1.0000 * this_year.{{ row }} / NULLIF(last_year.{{row}},0) ) - 1 as {{ row }}"
 }
 
 constant: row_period_over_last_year_percent {
+  export: override_optional
   value: "( this_year.{{ row | replace: '::percent', '' }} - last_year.{{row | replace: '::percent', '' }} ) as {{ row | replace: '::percent', '' }}"
 }
 
-constant: tbl_order { value: " 100*{{ forloop.index }} as tbl_order"}
-constant: tbl_val { value: "'{{ val | replace: '\"', '' }}'::varchar as tbl"}
+constant: tbl_order {
+  export: override_optional 
+  value: " 100*{{ forloop.index }} as tbl_order"
+ }
+constant: tbl_val { 
+  export: override_optional
+  value: "'{{ val | replace: '\"', '' }}'::varchar as tbl"
+}
