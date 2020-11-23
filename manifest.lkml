@@ -44,6 +44,11 @@ application: wbr_publish {
   }
 }
 
+constant: CONNECTION_NAME {
+  value: "choose-connection"
+  export: override_required
+}
+
 constant: title_case_viewname {
   export: override_optional
   value: "{% assign viewname = _view._name | replace: template, '' | split: '_' %}{% for word in viewname %}{{ word | capitalize }} {% endfor %}"
@@ -72,7 +77,8 @@ constant: row_period_over_last_year_percent {
 constant: tbl_order {
   export: override_optional 
   value: " 100*{{ forloop.index }} as tbl_order"
- }
+}
+
 constant: tbl_val { 
   export: override_optional
   value: "'{{ val | replace: '\"', '' }}'::varchar as tbl"

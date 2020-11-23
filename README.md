@@ -1,12 +1,24 @@
 # wbr_bundle
 
-A series of tools to facilitate WBR reporting with Looker installable via Marketplace installation.
+# Installation
+WBR Bundle is a series of tools to facilitate WBR reporting with Looker, installable via Marketplace installation.
 
 1) Follow these [directions](https://docs.looker.com/data-modeling/marketplace#installing_a_tool_from_a_git_url) to install via commit sha. 
 
 ```
 Git URL: git://github.com/bryan-at-looker/dynamic-dashboard-tester.git
 Git SHA: v1.1
+```
+
+## Notes
+WBR Tools builds LookML templates that requires a few Looker [constants](https://docs.looker.com/reference/manifest-params/constant). These will be imported via marketplace git installation. Then they will need to be imported from the marketplace project to your main LookML project via local project.
+
+Make sure that [Local Project Import](https://docs.looker.com/admin-options/settings/labs#local_project_import) is turned on in Admin > Labs and import the project
+
+```
+local_dependency: {
+  project: "marketplace_git_github_com_bryan_at_looker_wbr_bundle"
+}
 ```
 
 # What's New in v1.1
