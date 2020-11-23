@@ -1,3 +1,5 @@
+project_name: "wbr_bundle"
+
 visualization: {
   id: "wbr_v4"
   file: "wbr_v4.0.js"
