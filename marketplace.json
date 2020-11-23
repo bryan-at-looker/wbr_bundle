@@ -1,9 +1,9 @@
 {
-  "label": "Data Portal",
+  "label": "WBR Bundle",
   "category_label": "Applications",
   "branding": {
     "image_uri": "https://svgsilh.com/png/576797-3f51b5.png",
-    "tagline": "Create a full screen data portal using boards",
+    "tagline": "Install WBR Tools, WBR Publish and WBR V4 visualization",
     "brand_color": "#fe007d",
     "badge": "Beta"
   },
@@ -15,7 +15,7 @@
   },
   "models": [
     {
-      "name": "data-portal",
+      "name": "wbr_bundle",
       "connection_constant": "CONNECTION_NAME"
     }
   ]
