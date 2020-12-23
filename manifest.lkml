@@ -2,7 +2,7 @@ project_name: "wbr_bundle"
 
 visualization: {
   id: "wbr_v4"
-  file: "wbr_v4.0.js"
+  file: "wbr_v4.1.js"
   label: "WBR V4"
 }
 
@@ -28,7 +28,9 @@ application: wbr_publish {
     use_embeds: yes
     new_window: yes
     use_form_submit: yes
-    core_api_methods: ["all_dashboards","dashboard",
+    core_api_methods: [
+      "all_dashboards",
+      "dashboard",
       "search_users",
       "me",
       "search_dashboards",
