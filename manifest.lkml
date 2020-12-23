@@ -46,11 +46,6 @@ application: wbr_publish {
   }
 }
 
-constant: CONNECTION_NAME {
-  value: "choose-connection"
-  export: override_required
-}
-
 constant: title_case_viewname {
   export: override_optional
   value: "{% assign viewname = _view._name | replace: template, '' | split: '_' %}{% for word in viewname %}{{ word | capitalize }} {% endfor %}"
